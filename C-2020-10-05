@@ -1,0 +1,86 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+int main(){
+
+	int ch = getchar();//此函数是可以接收一个键盘的字符
+	putchar(ch);//此函式是可以输出一个字符 
+	printf("%c\n", ch);
+
+	int ch1 = 0;
+	//ctrl+z
+	//EOF - end of file -> -1
+	while ((ch1 =getchar())!=EOF)
+	{
+		putchar(ch1);
+	}
+
+	int a =0;
+	scanf("%d", &a);
+	if (a%2 == 1){
+		printf("%d是个奇数\n",a);
+	}
+		
+	else{
+		printf("%d是个偶数\n",a);
+	}
+	
+
+	switch (a)//switch表达式必须是整形！！！
+	{
+	case 1://case后面必须是 整形 常量 表达式
+		printf("星期1\n");
+		break;
+	case 2:
+		printf("星期2\n");
+		break;
+	case 3:
+		printf("星期3\n");
+		break;
+	case 4:
+		printf("星期4\n");
+		break;
+	case 5:
+		printf("星期5\n");
+		break;
+	case 6:
+		printf("星期6\n");
+		break;
+	default:
+		printf("星期7\n");
+		break;
+
+	//case 1:
+	//case 2:
+	//case 3:
+	//case 4:
+	//case 5:
+		//printf("工作日\n");
+		//break;
+	//case 6:
+	//case 7:
+		//printf("休息日\n");
+		//break;
+	}
+
+	//int i = 0;
+	//while (i<10)
+	//{
+	//	if(i == 5){
+	//	//break;直接结束
+	//	//continue;结束此代码块下得其他代码，然后继续其他代码块。（此处是继续回到while那一行）
+	//	printf("%d\n", i);
+	//	i++; }
+	//}
+
+
+
+	//int ch1 = 0;
+
+	return 0;
+
+
+}
+//if语句中else和最近得一个if相匹配
+//if防止错误小技巧：一般可能我们有机会写成if（num =100）；但是这样不会报错，而且也不提示错误
+//因为这是=号，是赋值。但是我们要是写成if（100=num），这样就会报错！
