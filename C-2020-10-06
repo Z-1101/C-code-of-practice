@@ -1,0 +1,150 @@
+#define _CRT_SECURE_NO_WARNINGS 1 //define 称为预处理指令
+#include <stdio.h>
+#include <string.h>
+#include <Windows.h>
+#include <stdlib.h>
+int main(){
+
+	//while ((ch = getchar())!=EOF)
+	////EOF - end of file -> (-1) 文件结束标志
+	//{
+	//	putchar(ch);
+	//}
+
+	//int ch = 0;
+	//char password[20] = { 0 };
+	//scanf("请输入密码：%s\n",password );
+	//printf("是否确认登陆（Y/N）");
+	//while ((ch =getchar())!='\n')
+	//{
+	//	;
+	//}
+	//int a = getchar();
+	//if (a =='Y'){
+	//	printf("确认登陆\n");
+	//}
+	//else
+	//{
+	//	printf("取消登录\n");
+	//}
+
+	//int i = 0;
+	//int j = 0;
+	////for (int  i = 0; i < 10; i++)
+	//for (; i < 10; i++) 
+	//{
+	//	//for (int j = 0; j < 10; j++){//此方式有100个臭傻逼！
+	//	for (; j < 10; j++){//此方式，只有十个臭傻逼！
+	//		printf("臭傻逼！");
+	//	}
+	//}
+
+	////笔试题:请问循环要循环多少次
+	//int a = 0;
+	//int b = 0; 
+	//for (a = 0, b = 0; b = 0; a++,b++)
+	//{
+	//	b++;
+	//}
+	////答案是0次。在循环条件当中 b=0 ,次循环条件是一个等号，而且=0，相当于是false，因此一次也不执行
+
+
+	//
+	//int n = 0;
+	//int k = 1;
+	//int sum = 0;
+	//for (n=1; n < 4;n++ )
+	//{	
+	//	//int k = 1;
+	//	//for (int j = 1; j <n+1 ; j++)
+	//	//{
+	//	//	k = k*j;//
+	//	//	
+	//	//}
+	//	k = k*n;//n的阶乘
+	//	sum = sum + k;
+	//}
+
+	//printf("sum=%d\n",sum);
+	//return 0;
+
+	//int i = 0;
+	//int j = 0;
+
+	//char ch1[] = "Welcome to DanCheng!!!";
+	//char ch2[] = "######################";
+	//
+	//int left = 0;
+	//int right = strlen(ch1) - 1;
+	//while (left<=right)
+	//{
+	//	ch2[left] = ch1[left];
+	//	ch2[right] = ch1[right];
+	//	left++;
+	//	right--;
+	//	printf("%s\n", ch2);
+	//	//休息一秒！
+	//	Sleep(1000);
+	//	system("cls");//执行系统命令的一个函数  -cls 清空屏幕
+	//}
+	//printf("%s\n", ch2);
+
+	
+	//打印一个99乘法表
+	//for (int i = 1; i < 10; i++)
+	//{
+	//	for (int j = 1; j < i + 1;j++){
+	//		int num = i*j;
+	//		printf("%d*%d=%2d	",i,j,num);//%2d 指打印出来的数字是两位，如果不够自动补空格（右对齐）
+	//	}
+	//	printf("\n");
+	//}
+
+	//int flag = 1;
+
+	//double sum = 0.0;
+	//for (int i = 1; i < 100; i++){
+	//	sum = sum + flag*1.0 / i;
+	//	flag = -flag;
+	//	
+	//}printf("%lf\n", sum);
+
+
+	//关机代码 方式一 ：goto语句写的
+	//char input[] = { 0 };
+	////shutdown -s -t 60
+	////system() -执行系统命令
+	//system("shutdown -s -t 60");
+	//again:
+	//printf("请注意，电脑要1分钟内关机，如果输入“我是猪”，就会取消关机\n");
+	//printf("请输入：");
+	//scanf("%s", input);
+	//if (strcmp(input,"我是猪")==0)//strcmp - 比较两个字符串  返回值 =0，说明相等
+	//{
+	//	system("shutdown -a");
+
+	//}
+	//else
+	//{
+	//	goto again;
+	//}
+
+	//关机 代码 方式二 ：while语句写的
+	char input[] = { 0 };
+	//shutdown -s -t 60
+	//system() -执行系统命令
+	system("shutdown -s -t 60");
+	while (1)
+	{
+		printf("请注意，电脑要1分钟内关机，如果输入“我是猪”，就会取消关机\n");
+		printf("请输入：");
+		scanf("%s", input);
+		if (strcmp(input, "我是猪") == 0)//strcmp - 比较两个字符串  返回值 =0，说明相等
+		{
+			system("shutdown -a");
+			break;
+		}
+	}
+
+return 0;
+}
