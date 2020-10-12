@@ -1,0 +1,85 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include "game.h"
+
+
+void game(){
+
+
+	char arr[ROW][COL];
+	//char ret[] = " ";
+	//初始化棋盘
+	InitArr(arr,ROW,COL);
+	//打印棋盘
+	DisplayArr(arr, ROW, COL);
+	while (1)
+	{
+		//玩家下棋
+		Player(arr, ROW, COL);
+		//再次打印棋盘
+		DisplayArr(arr, ROW, COL);
+
+		//判断玩家是否赢
+		//ret = IsWin(arr, ROW, COL);
+		//if (ret!='C')
+		//{
+		//	break;
+		//}
+
+		//电脑下棋
+		Computer(arr, ROW, COL);
+		//再次打印棋盘
+		DisplayArr(arr, ROW, COL);
+
+		//判断电脑是否赢
+		//ret = IsWin(arr, ROW, COL);
+		//if (ret != 'C')
+		//{
+		//	break;
+		//}
+
+	}
+
+}
+
+void menu(){
+	printf("*******************************\n");
+	printf("*****	1、开始游戏	*******\n");
+	printf("*****	2、退出游戏	*******\n");
+	printf("*******************************\n");
+}
+
+void test(){
+	int a = 0;
+	srand((unsigned int )time(NULL));//用来设置随机数使用的
+	do
+	{
+	//创建菜单
+		menu();
+		printf("请选择：");
+		scanf("%d", &a);
+		if (a==1)
+		{
+			//printf("开始游戏");
+			game();
+		}
+		else if (a==2)
+		{
+			printf("结束游戏");
+		}
+		else
+		{
+			printf("请重新输入");
+		}
+	
+	} while (a==2);
+
+}
+
+
+//
+int	main(){
+
+	test();
+
+	return 0;
+}
