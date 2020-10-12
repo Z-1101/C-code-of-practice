@@ -1,0 +1,92 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include "game.h"
+#include <stdio.h>
+#include <stdlib.h>//给srand函数引用的头文件
+#include <time.h>//给time函数引用的头文件
+
+void InitArr(char arr[ROW][COL],int row,int col){
+	for (int i = 0; i <ROW; i++)
+	{
+		for (int j = 0; j < COL; j++)
+		{
+			arr[i][j] = ' ';
+		}
+	}
+
+
+
+}
+void DisplayArr(char arr[ROW][COL], int row, int col){
+	for (int i = 0; i <ROW; i++)
+	{
+		//打印一行数据
+		for (int j = 0; j < COL; j++)
+		{
+			printf(" %c ", arr[i][j]);
+			if (j < ROW - 1){
+				printf("|");
+			}
+		}
+		printf("\n");
+		//打印分隔符
+		if (i<ROW-1)
+		{
+			for (int z = 0; z < COL; z++)
+			{
+				printf("---");
+				if (z < COL - 1){
+					printf("|");
+				}
+			}
+			printf("\n");
+		}
+		
+	}
+}
+
+void Player(char arr[ROW][COL], int row, int col){
+	int x = 0;
+	int y = 0;
+	printf("请输入你要下的坐标：");
+	scanf("%d%d", &x,&y);
+	while (1)
+	{
+		if (x >= 1 && x <= ROW&&y >= 1 && y <= COL){
+			if (arr[x-1][y-1]==' ')
+			{
+				arr[x - 1][y - 1] = '*';
+				break;
+			}
+			else
+			{
+				printf("该地址已被占用！\n");
+				
+			}
+		}
+		else
+		{
+			printf("该坐标不合法！\n");
+			break;
+		}
+	}
+
+}
+
+void Computer(char arr[ROW][COL], int row, int col){
+	int x = 0;
+	int y = 0;
+	printf("电脑走：\n");
+	x = rand()&ROW;
+	y = rand()&COL;
+	while (1)
+	{
+		if (arr[x][y]==' ')
+		{
+			arr[x][y] = '#';
+			break;
+		}
+
+	}
+
+
+}
