@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+#include <stdlib.h>//给srand函数引用的头文件
+#include <time.h>//给time函数引用的头文件
+//函数声明
+void InitArr(char arr[ROW][COL], int row, int col);
+
+void DisplaytArr(char arr[ROW][COL], int row, int col);
+
+void Player(char arr[ROW][COL], int row, int col);
+
+void Computer(char arr[ROW][COL], int row, int col);
+
+//判断游戏状态
+//玩家赢——》'*'
+//电脑赢——》'#'
+//平局	——》'Q'
+//继续  ——》'C'
